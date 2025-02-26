@@ -10,7 +10,6 @@
 		CEB70BE22D6EBF0A00616ECF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB70BDB2D6EBF0A00616ECF /* Preview Assets.xcassets */; };
 		CEB70BE32D6EBF0A00616ECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB70BDD2D6EBF0A00616ECF /* Assets.xcassets */; };
 		CEB70BE42D6EBF0A00616ECF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70BDE2D6EBF0A00616ECF /* ContentView.swift */; };
-		CEB70BE52D6EBF0A00616ECF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70BDF2D6EBF0A00616ECF /* Item.swift */; };
 		CEB70BE62D6EBF0A00616ECF /* SwiftUlToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70BE02D6EBF0A00616ECF /* SwiftUlToDoListApp.swift */; };
 /* End PBXBuildFile section */
 
@@ -19,7 +18,6 @@
 		CEB70BDB2D6EBF0A00616ECF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CEB70BDD2D6EBF0A00616ECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEB70BDE2D6EBF0A00616ECF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		CEB70BDF2D6EBF0A00616ECF /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		CEB70BE02D6EBF0A00616ECF /* SwiftUlToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUlToDoListApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,7 +62,6 @@
 				CEB70BDC2D6EBF0A00616ECF /* Preview Content */,
 				CEB70BDD2D6EBF0A00616ECF /* Assets.xcassets */,
 				CEB70BDE2D6EBF0A00616ECF /* ContentView.swift */,
-				CEB70BDF2D6EBF0A00616ECF /* Item.swift */,
 				CEB70BE02D6EBF0A00616ECF /* SwiftUlToDoListApp.swift */,
 			);
 			path = SwiftUlToDoList;
@@ -144,7 +141,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEB70BE42D6EBF0A00616ECF /* ContentView.swift in Sources */,
-				CEB70BE52D6EBF0A00616ECF /* Item.swift in Sources */,
 				CEB70BE62D6EBF0A00616ECF /* SwiftUlToDoListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
