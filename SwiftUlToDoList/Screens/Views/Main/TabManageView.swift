@@ -8,6 +8,7 @@ struct TabManageView: View {
         }
         // ナビゲーションバー設定
         .navigationBarSetting(title: "タブ管理", isVisible: true)
+        .navigationBarIconSetting(name: "plus", isEnabled: true, action: {})
 
         // 画面スタイル
         .frame(maxWidth: .infinity, maxHeight: .infinity)

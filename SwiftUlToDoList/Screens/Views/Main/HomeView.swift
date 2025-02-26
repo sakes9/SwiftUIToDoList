@@ -7,13 +7,10 @@ struct HomeView: View {
     var body: some View {
         VStack {
             Text("ホーム画面")
-
-            Button(action: onTabManageIconTapped) {
-                Text("タブ管理アイコン")
-            }
         }
         // ナビゲーションバー設定
         .navigationBarSetting(title: "ホーム", isVisible: true)
+        .navigationBarIconSetting(name: "folder.fill", isEnabled: true, action: onTabManageIconTapped)
 
         // 画面スタイル
         .frame(maxWidth: .infinity, maxHeight: .infinity)

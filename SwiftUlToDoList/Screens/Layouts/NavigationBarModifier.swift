@@ -1,5 +1,7 @@
 import SwiftUI
 
+// MARK: - 基本設定
+
 /// ナビゲーションバーオプション
 struct NavigationBarOptions {
     var title: String? // タイトル（オプショナル）
@@ -71,9 +73,55 @@ extension View {
     }
 }
 
+// MARK: - アイコン
+
+/// アイコンオプション
+struct NavigationBarIconOptions {
+    let name: String // アイコン名
+    let isEnabled: Bool // 有効判定（true: 有効, false: 無効）
+    let action: () -> Void // アクション
+}
+
+/// アイコンモディファイア
+private struct NavigationBarIconModifier: ViewModifier {
+    let options: NavigationBarIconOptions
+
+    func body(content: Content) -> some View {
+        content
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: options.action,
+                           label: {
+                               Image(systemName: options.name)
+                                   .foregroundColor(options.isEnabled ? .white : .gray)
+                           })
+                           .disabled(!options.isEnabled)
+                }
+            }
+    }
+}
+
+/// ビュー拡張
+extension View {
+    /// アイコンの設定
+    /// - Parameters:
+    ///   - name: アイコン名
+    ///   - isEnabled: 有効判定
+    ///   - action: アクション
+    /// - Returns: アイコンが設定されたビュー
+    func navigationBarIconSetting(name: String,
+                                  isEnabled: Bool = true,
+                                  action: @escaping () -> Void) -> some View {
+        modifier(NavigationBarIconModifier(
+            options: .init(name: name, isEnabled: isEnabled, action: action))
+        )
+    }
+}
+
 #Preview {
     NavigationView {
         Text("Hello world!")
             .navigationBarSetting(title: "ホーム", isVisible: true)
+            .navigationBarIconSetting(name: "folder.fill", isEnabled: true, action: {})
     }
 }
