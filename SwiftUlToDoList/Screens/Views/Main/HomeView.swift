@@ -5,11 +5,19 @@ struct HomeView: View {
     @Binding var navigationPath: [NavigationItem]
 
     var body: some View {
-        Text("ホーム画面")
+        VStack {
+            Text("ホーム画面")
 
-        Button(action: onTabManageIconTapped) {
-            Text("タブ管理アイコン")
+            Button(action: onTabManageIconTapped) {
+                Text("タブ管理アイコン")
+            }
         }
+        // ナビゲーションバー設定
+        .navigationBarSetting(title: "ホーム", isVisible: true)
+
+        // 画面スタイル
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color("BgColor"))
     }
 
     /// タブ管理アイコンタップ時
@@ -19,5 +27,7 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView(navigationPath: .constant([]))
+    NavigationView {
+        HomeView(navigationPath: .constant([]))
+    }
 }

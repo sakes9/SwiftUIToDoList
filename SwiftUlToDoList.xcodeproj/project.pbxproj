@@ -16,6 +16,7 @@
 		CEB70C0D2D6ED3D500616ECF /* ScreenID.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70C0C2D6ED3CF00616ECF /* ScreenID.swift */; };
 		CEB70C0F2D6ED41F00616ECF /* NavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70C0E2D6ED41B00616ECF /* NavigationItem.swift */; };
 		CEB70C112D6ED4C500616ECF /* MainStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70C102D6ED4C500616ECF /* MainStack.swift */; };
+		CEB70C152D6EED9000616ECF /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70C142D6EED8600616ECF /* NavigationBarModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		CEB70C0C2D6ED3CF00616ECF /* ScreenID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenID.swift; sourceTree = "<group>"; };
 		CEB70C0E2D6ED41B00616ECF /* NavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItem.swift; sourceTree = "<group>"; };
 		CEB70C102D6ED4C500616ECF /* MainStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStack.swift; sourceTree = "<group>"; };
+		CEB70C142D6EED8600616ECF /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				CEB70C092D6ED3A800616ECF /* Navigation */,
+				CEB70C132D6EED6200616ECF /* Layouts */,
 				CEB70C002D6ED2CF00616ECF /* Views */,
 			);
 			path = Screens;
@@ -112,6 +115,14 @@
 				CEB70C0E2D6ED41B00616ECF /* NavigationItem.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CEB70C132D6EED6200616ECF /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				CEB70C142D6EED8600616ECF /* NavigationBarModifier.swift */,
+			);
+			path = Layouts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +200,7 @@
 			files = (
 				CEB70C022D6ED2EB00616ECF /* InitialView.swift in Sources */,
 				CEB70C052D6ED31200616ECF /* HomeView.swift in Sources */,
+				CEB70C152D6EED9000616ECF /* NavigationBarModifier.swift in Sources */,
 				CEB70BE62D6EBF0A00616ECF /* SwiftUlToDoListApp.swift in Sources */,
 				CEB70C0D2D6ED3D500616ECF /* ScreenID.swift in Sources */,
 				CEB70C112D6ED4C500616ECF /* MainStack.swift in Sources */,
