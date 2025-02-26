@@ -4,7 +4,7 @@ import SwiftUI
 struct SwiftUlToDoListApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            InitialView()
         }
     }
 }
