@@ -6,17 +6,22 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CEB70BE22D6EBF0A00616ECF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB70BDB2D6EBF0A00616ECF /* Preview Assets.xcassets */; };
+		CEB70BE32D6EBF0A00616ECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB70BDD2D6EBF0A00616ECF /* Assets.xcassets */; };
+		CEB70BE42D6EBF0A00616ECF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70BDE2D6EBF0A00616ECF /* ContentView.swift */; };
+		CEB70BE52D6EBF0A00616ECF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70BDF2D6EBF0A00616ECF /* Item.swift */; };
+		CEB70BE62D6EBF0A00616ECF /* SwiftUlToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70BE02D6EBF0A00616ECF /* SwiftUlToDoListApp.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		CE4ABC8C2D6EBB6B003C0682 /* SwiftUlToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUlToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB70BDB2D6EBF0A00616ECF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CEB70BDD2D6EBF0A00616ECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEB70BDE2D6EBF0A00616ECF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CEB70BDF2D6EBF0A00616ECF /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		CEB70BE02D6EBF0A00616ECF /* SwiftUlToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUlToDoListApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		CE4ABC8E2D6EBB6B003C0682 /* SwiftUlToDoList */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SwiftUlToDoList;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CE4ABC892D6EBB6B003C0682 /* Frameworks */ = {
@@ -32,7 +37,7 @@
 		CE4ABC832D6EBB6B003C0682 = {
 			isa = PBXGroup;
 			children = (
-				CE4ABC8E2D6EBB6B003C0682 /* SwiftUlToDoList */,
+				CEB70BE12D6EBF0A00616ECF /* SwiftUlToDoList */,
 				CE4ABC8D2D6EBB6B003C0682 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +48,26 @@
 				CE4ABC8C2D6EBB6B003C0682 /* SwiftUlToDoList.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CEB70BDC2D6EBF0A00616ECF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CEB70BDB2D6EBF0A00616ECF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CEB70BE12D6EBF0A00616ECF /* SwiftUlToDoList */ = {
+			isa = PBXGroup;
+			children = (
+				CEB70BDC2D6EBF0A00616ECF /* Preview Content */,
+				CEB70BDD2D6EBF0A00616ECF /* Assets.xcassets */,
+				CEB70BDE2D6EBF0A00616ECF /* ContentView.swift */,
+				CEB70BDF2D6EBF0A00616ECF /* Item.swift */,
+				CEB70BE02D6EBF0A00616ECF /* SwiftUlToDoListApp.swift */,
+			);
+			path = SwiftUlToDoList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,9 +84,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				CE4ABC8E2D6EBB6B003C0682 /* SwiftUlToDoList */,
 			);
 			name = SwiftUlToDoList;
 			packageProductDependencies = (
@@ -109,6 +131,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB70BE22D6EBF0A00616ECF /* Preview Assets.xcassets in Resources */,
+				CEB70BE32D6EBF0A00616ECF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEB70BE42D6EBF0A00616ECF /* ContentView.swift in Sources */,
+				CEB70BE52D6EBF0A00616ECF /* Item.swift in Sources */,
+				CEB70BE62D6EBF0A00616ECF /* SwiftUlToDoListApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
