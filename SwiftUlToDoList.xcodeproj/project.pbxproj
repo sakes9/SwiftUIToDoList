@@ -12,6 +12,7 @@
 		CE168CA82D701D2F0046029B /* TextFieldAlertModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168CA72D701D2F0046029B /* TextFieldAlertModifier.swift */; };
 		CE168CAA2D7031C90046029B /* CustomList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168CA92D7031C90046029B /* CustomList.swift */; };
 		CE168CAD2D703D090046029B /* SwiftUITabView in Frameworks */ = {isa = PBXBuildFile; productRef = CE168CAC2D703D090046029B /* SwiftUITabView */; };
+		CE168CAF2D7043890046029B /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168CAE2D7043890046029B /* CustomAlert.swift */; };
 		CEB70BE22D6EBF0A00616ECF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB70BDB2D6EBF0A00616ECF /* Preview Assets.xcassets */; };
 		CEB70BE32D6EBF0A00616ECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB70BDD2D6EBF0A00616ECF /* Assets.xcassets */; };
 		CEB70BE62D6EBF0A00616ECF /* SwiftUlToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70BE02D6EBF0A00616ECF /* SwiftUlToDoListApp.swift */; };
@@ -29,6 +30,7 @@
 		CE168CA52D70146C0046029B /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		CE168CA72D701D2F0046029B /* TextFieldAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAlertModifier.swift; sourceTree = "<group>"; };
 		CE168CA92D7031C90046029B /* CustomList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomList.swift; sourceTree = "<group>"; };
+		CE168CAE2D7043890046029B /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		CE4ABC8C2D6EBB6B003C0682 /* SwiftUlToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUlToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB70BDB2D6EBF0A00616ECF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CEB70BDD2D6EBF0A00616ECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				CE168CA52D70146C0046029B /* FloatingButton.swift */,
 				CE168CA72D701D2F0046029B /* TextFieldAlertModifier.swift */,
 				CE168CA92D7031C90046029B /* CustomList.swift */,
+				CE168CAE2D7043890046029B /* CustomAlert.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 				CEB70C0F2D6ED41F00616ECF /* NavigationItem.swift in Sources */,
 				CE168CA62D70146C0046029B /* FloatingButton.swift in Sources */,
 				CEB70C072D6ED32C00616ECF /* TabManageView.swift in Sources */,
+				CE168CAF2D7043890046029B /* CustomAlert.swift in Sources */,
 				CE168CAA2D7031C90046029B /* CustomList.swift in Sources */,
 				CE168CA42D700D280046029B /* ToDoListItem.swift in Sources */,
 			);
