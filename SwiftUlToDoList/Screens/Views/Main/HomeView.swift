@@ -6,7 +6,8 @@ struct HomeView: View {
 
     var body: some View {
         VStack {
-            Text("ホーム画面")
+            ToDoListItem(text: "タスク１", isSelected: true, action: {})
+            ToDoListItem(text: "タスク２", isSelected: false, action: {})
         }
         // ナビゲーションバー設定
         .navigationBarSetting(title: "ホーム", isVisible: true)
