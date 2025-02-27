@@ -16,11 +16,19 @@ struct HomeView: View {
         // 画面スタイル
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color("BgColor"))
+
+        // コンポーネント
+        .floatingButton(iconName: "plus", action: onTaskAddButtonTapped)
     }
 
     /// タブ管理アイコンタップ時
     private func onTabManageIconTapped() {
         navigationPath.append(.init(id: .tabManage))
+    }
+
+    /// タスク追加ボタンタップ時
+    private func onTaskAddButtonTapped() {
+        print("タスク追加ボタンがタップされました")
     }
 }
 
