@@ -1,0 +1,15 @@
+{
+  "originHash" : "91821e59ca92d6776a94dccaf0afa16dbcb01e77ec68f6d1925ead92c71eb44d",
+  "pins" : [
+    {
+      "identity" : "swiftuitabview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/sakes9/SwiftUITabView",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b2d41f7e3850b00be41093cc3ba9498f1c75cf4f"
+      }
+    }
+  ],
+  "version" : 3
+}

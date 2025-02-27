@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftUITabView
 
 // ホーム画面
 struct HomeView: View {
@@ -6,6 +7,7 @@ struct HomeView: View {
 
     @State private var isAddTaskPresented = false // タスク追加アラート表示判定
     @State private var isEditTaskPresented = false // タスク修正アラート表示判定
+    @State private var selectedTabIndex = 0 // 選択されたタブのインデックス
 
     // ダミーのToDoタスク構造体
     private struct DummyTodoTask: Identifiable {
@@ -13,6 +15,9 @@ struct HomeView: View {
         var name: String // タスク名
         var isCompleted: Bool = false // ToDoの完了状態
     }
+
+    // ダミーのToDoタブリスト
+    private let DUMMY_TODO_TABS = ["タブ１", "タブ２", "タブ３", "タブ４", "タブ５", "タブ６"]
 
     // ダミーのToDoタスクリスト
     @State private var DUMMY_TODO_TASKS: [DummyTodoTask] = [
@@ -22,16 +27,33 @@ struct HomeView: View {
     ]
 
     var body: some View {
-        CustomList(items: DUMMY_TODO_TASKS, onDelete: onDeleteButtonTapped) { task in
-            ToDoListItem(text: task.name,
-                         isSelected: task.isCompleted,
-                         action: {
-                             print("\(task.name) がタップされました")
-                         })
-                         .listRowInsets(EdgeInsets()) // 要素の余白を削除
-                         .onTapGesture {
-                             isEditTaskPresented = true
-                         }
+        VStack(spacing: 0) {
+            TabBarView(selectedIndex: $selectedTabIndex,
+                       titles: DUMMY_TODO_TABS,
+                       selectedColor: Color("ThemeColor"))
+            TabView(selection: $selectedTabIndex) {
+                ForEach(DUMMY_TODO_TABS.indices, id: \.self) { _ in
+                    CustomList(items: DUMMY_TODO_TASKS, onDelete: onDeleteButtonTapped) { task in
+                        ToDoListItem(
+                            text: task.name,
+                            isSelected: task.isCompleted,
+                            action: {
+                                print("\(task.name) がタップされました")
+                            }
+                        )
+                        .listRowInsets(EdgeInsets()) // 要素の余白を削除
+                        .onTapGesture {
+                            isEditTaskPresented = true
+                        }
+                    }
+                }
+            }
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            .onAppear {
+                // リストのスワイプ削除とタブビューのスワイプページングのジェスチャーが競合するため、
+                // タブビューのスクロール機能を無効化して、タブビューのスワイプページングを無効にする。
+                UIScrollView.appearance().isScrollEnabled = false
+            }
         }
         // ナビゲーションバー設定
         .navigationBarSetting(title: "ホーム", isVisible: true)
