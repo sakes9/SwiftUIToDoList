@@ -1,29 +1,19 @@
+import SwiftData
 import SwiftUI
 
 /// タブ管理画面
 struct TabManageView: View {
+    @Query(sort: \ToDoTab.createdAt) private var toDoTabs: [ToDoTab] // タブリスト
+
     @State private var isAddTabPresented = false // タブ追加アラート表示判定
     @State private var isEditTabPresented = false // タブ修正アラート表示判定
     @State private var alertInfo: AlertInfo? // アラート情報
 
     private let todoTabService = ToDoTabService() // ToDoタブサービス
 
-    // ダミーのタブ構造体
-    private struct DummyTodoTab: Identifiable {
-        var id: UUID // ID
-        var name: String // タブ名
-    }
-
-    // ダミーのタブリスト
-    @State private var DUMMY_TODO_TABS: [DummyTodoTab] = [
-        .init(id: UUID(), name: "タブ1"),
-        .init(id: UUID(), name: "タブ2"),
-        .init(id: UUID(), name: "タブ3")
-    ]
-
     var body: some View {
-        CustomList(items: DUMMY_TODO_TABS, onDelete: onDeleteButtonTapped) { tab in
-            Text(tab.name)
+        CustomList(items: toDoTabs, onDelete: onDeleteButtonTapped) { toDoTab in
+            Text(toDoTab.name)
                 .padding(.vertical, 8)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 .contentShape(Rectangle()) // タップ領域を確保
@@ -65,9 +55,9 @@ struct TabManageView: View {
     }
 
     /// 削除ボタンタップ時
-    /// - Parameter tab: タブ
-    private func onDeleteButtonTapped(tab: DummyTodoTab) {
-        DUMMY_TODO_TABS.removeAll { $0.id == tab.id }
+    /// - Parameter toDoTab: タブ
+    private func onDeleteButtonTapped(toDoTab: ToDoTab) {
+        print("タブ削除: \(toDoTab.name)")
     }
 
     /// タブ追加
@@ -90,5 +80,6 @@ struct TabManageView: View {
 #Preview {
     NavigationView {
         TabManageView()
+            .modelContainer(SwiftDataService.shared.getModelContainer())
     }
 }

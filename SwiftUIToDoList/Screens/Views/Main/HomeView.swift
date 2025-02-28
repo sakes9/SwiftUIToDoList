@@ -1,9 +1,12 @@
+import SwiftData
 import SwiftUI
 import SwiftUITabView
 
 // ホーム画面
 struct HomeView: View {
     @Binding var navigationPath: [NavigationItem]
+
+    @Query(sort: \ToDoTab.createdAt) private var toDoTabs: [ToDoTab] // タブリスト
 
     @State private var isAddTaskPresented = false // タスク追加アラート表示判定
     @State private var isEditTaskPresented = false // タスク修正アラート表示判定
@@ -16,9 +19,6 @@ struct HomeView: View {
         var isCompleted: Bool = false // ToDoの完了状態
     }
 
-    // ダミーのToDoタブリスト
-    private let DUMMY_TODO_TABS = ["タブ１", "タブ２", "タブ３", "タブ４", "タブ５", "タブ６"]
-
     // ダミーのToDoタスクリスト
     @State private var DUMMY_TODO_TASKS: [DummyTodoTask] = [
         .init(id: UUID(), name: "タスク1", isCompleted: true),
@@ -29,10 +29,10 @@ struct HomeView: View {
     var body: some View {
         VStack(spacing: 0) {
             TabBarView(selectedIndex: $selectedTabIndex,
-                       titles: DUMMY_TODO_TABS,
+                       titles: toDoTabs.map { $0.name },
                        selectedColor: Color("ThemeColor"))
             TabView(selection: $selectedTabIndex) {
-                ForEach(DUMMY_TODO_TABS.indices, id: \.self) { _ in
+                ForEach(toDoTabs.indices, id: \.self) { _ in
                     CustomList(items: DUMMY_TODO_TASKS, onDelete: onDeleteButtonTapped) { task in
                         ToDoListItem(
                             text: task.name,
@@ -111,7 +111,22 @@ struct HomeView: View {
 }
 
 #Preview {
+    let TODO_TAB_DATA: [ToDoTab] = [
+        .init(id: UUID(), name: "今日の予定", createdAt: Date(), updatedAt: nil),
+        .init(id: UUID(), name: "買うもの", createdAt: Date(), updatedAt: nil),
+        .init(id: UUID(), name: "やること", createdAt: Date(), updatedAt: nil),
+        .init(id: UUID(), name: "引越し", createdAt: Date(), updatedAt: nil)
+    ]
+
+    let todoTabService = ToDoTabService()
+
     NavigationView {
         HomeView(navigationPath: .constant([]))
+            .modelContainer(SwiftDataService.shared.getModelContainer())
+    }
+    .onAppear {
+        for tab in TODO_TAB_DATA {
+            try? todoTabService.add(name: tab.name)
+        }
     }
 }
