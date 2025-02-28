@@ -4,6 +4,9 @@ import SwiftUI
 struct TabManageView: View {
     @State private var isAddTabPresented = false // タブ追加アラート表示判定
     @State private var isEditTabPresented = false // タブ修正アラート表示判定
+    @State private var alertInfo: AlertInfo? // アラート情報
+
+    private let todoTabService = ToDoTabService() // ToDoタブサービス
 
     // ダミーのタブ構造体
     private struct DummyTodoTab: Identifiable {
@@ -53,6 +56,7 @@ struct TabManageView: View {
                         defaultText: "タブ",
                         maxLength: 20,
                         onConfirm: editTab)
+        .customAlert(alertInfo: $alertInfo)
     }
 
     /// タブ追加アイコンタップ時
@@ -69,7 +73,11 @@ struct TabManageView: View {
     /// タブ追加
     /// - Parameter text: 入力テキスト
     private func addTab(text: String) {
-        print("タブ追加: \(text)")
+        do {
+            try todoTabService.add(name: text)
+        } catch {
+            alertInfo = .init(title: "エラー", message: "タブの追加に失敗しました")
+        }
     }
 
     /// タブ修正

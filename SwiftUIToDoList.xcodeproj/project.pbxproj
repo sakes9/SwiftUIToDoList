@@ -26,6 +26,7 @@
 		CEFF5D172D714C050073113A /* SwiftDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF5D162D714BFF0073113A /* SwiftDataService.swift */; };
 		CEFF5D1A2D7150040073113A /* ToDoTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF5D192D714FFE0073113A /* ToDoTab.swift */; };
 		CEFF5D1C2D7151800073113A /* ToDoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF5D1B2D71517C0073113A /* ToDoTask.swift */; };
+		CEFF5D212D716CF00073113A /* ToDoTabService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF5D202D716CE90073113A /* ToDoTabService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		CEFF5D162D714BFF0073113A /* SwiftDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataService.swift; sourceTree = "<group>"; };
 		CEFF5D192D714FFE0073113A /* ToDoTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTab.swift; sourceTree = "<group>"; };
 		CEFF5D1B2D71517C0073113A /* ToDoTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTask.swift; sourceTree = "<group>"; };
+		CEFF5D202D716CE90073113A /* ToDoTabService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTabService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				CEB70BE02D6EBF0A00616ECF /* SwiftUIToDoListApp.swift */,
 				CEB70BFF2D6ED2C700616ECF /* Screens */,
 				CE168CA22D700CFC0046029B /* Components */,
+				CEFF5D1F2D716CDB0073113A /* Services */,
 				CEFF5D142D714BCF0073113A /* SwiftData */,
 			);
 			path = SwiftUIToDoList;
@@ -181,6 +184,14 @@
 				CEFF5D1B2D71517C0073113A /* ToDoTask.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CEFF5D1F2D716CDB0073113A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CEFF5D202D716CE90073113A /* ToDoTabService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +277,7 @@
 				CEB70C152D6EED9000616ECF /* NavigationBarModifier.swift in Sources */,
 				CEB70BE62D6EBF0A00616ECF /* SwiftUIToDoListApp.swift in Sources */,
 				CE168CA82D701D2F0046029B /* TextFieldAlertModifier.swift in Sources */,
+				CEFF5D212D716CF00073113A /* ToDoTabService.swift in Sources */,
 				CEB70C0D2D6ED3D500616ECF /* ScreenID.swift in Sources */,
 				CEB70C112D6ED4C500616ECF /* MainStack.swift in Sources */,
 				CEFF5D172D714C050073113A /* SwiftDataService.swift in Sources */,
