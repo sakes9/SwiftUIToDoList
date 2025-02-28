@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct SwiftUlToDoListApp: App {
+struct SwiftUIToDoListApp: App {
     let modelContainer = SwiftDataService.shared.getModelContainer() // モデルコンテナ
 
     var body: some Scene {

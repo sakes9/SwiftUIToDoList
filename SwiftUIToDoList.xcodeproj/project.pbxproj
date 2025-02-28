@@ -15,7 +15,7 @@
 		CE168CAF2D7043890046029B /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE168CAE2D7043890046029B /* CustomAlert.swift */; };
 		CEB70BE22D6EBF0A00616ECF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB70BDB2D6EBF0A00616ECF /* Preview Assets.xcassets */; };
 		CEB70BE32D6EBF0A00616ECF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB70BDD2D6EBF0A00616ECF /* Assets.xcassets */; };
-		CEB70BE62D6EBF0A00616ECF /* SwiftUlToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70BE02D6EBF0A00616ECF /* SwiftUlToDoListApp.swift */; };
+		CEB70BE62D6EBF0A00616ECF /* SwiftUIToDoListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70BE02D6EBF0A00616ECF /* SwiftUIToDoListApp.swift */; };
 		CEB70C022D6ED2EB00616ECF /* InitialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70C012D6ED2EB00616ECF /* InitialView.swift */; };
 		CEB70C052D6ED31200616ECF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70C042D6ED31200616ECF /* HomeView.swift */; };
 		CEB70C072D6ED32C00616ECF /* TabManageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70C062D6ED32C00616ECF /* TabManageView.swift */; };
@@ -34,10 +34,10 @@
 		CE168CA72D701D2F0046029B /* TextFieldAlertModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldAlertModifier.swift; sourceTree = "<group>"; };
 		CE168CA92D7031C90046029B /* CustomList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomList.swift; sourceTree = "<group>"; };
 		CE168CAE2D7043890046029B /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
-		CE4ABC8C2D6EBB6B003C0682 /* SwiftUlToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUlToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4ABC8C2D6EBB6B003C0682 /* SwiftUIToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB70BDB2D6EBF0A00616ECF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CEB70BDD2D6EBF0A00616ECF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CEB70BE02D6EBF0A00616ECF /* SwiftUlToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUlToDoListApp.swift; sourceTree = "<group>"; };
+		CEB70BE02D6EBF0A00616ECF /* SwiftUIToDoListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIToDoListApp.swift; sourceTree = "<group>"; };
 		CEB70C012D6ED2EB00616ECF /* InitialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialView.swift; sourceTree = "<group>"; };
 		CEB70C042D6ED31200616ECF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CEB70C062D6ED32C00616ECF /* TabManageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabManageView.swift; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 		CE4ABC832D6EBB6B003C0682 = {
 			isa = PBXGroup;
 			children = (
-				CEB70BE12D6EBF0A00616ECF /* SwiftUlToDoList */,
+				CEB70BE12D6EBF0A00616ECF /* SwiftUIToDoList */,
 				CE4ABC8D2D6EBB6B003C0682 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,7 +85,7 @@
 		CE4ABC8D2D6EBB6B003C0682 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE4ABC8C2D6EBB6B003C0682 /* SwiftUlToDoList.app */,
+				CE4ABC8C2D6EBB6B003C0682 /* SwiftUIToDoList.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -98,17 +98,17 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		CEB70BE12D6EBF0A00616ECF /* SwiftUlToDoList */ = {
+		CEB70BE12D6EBF0A00616ECF /* SwiftUIToDoList */ = {
 			isa = PBXGroup;
 			children = (
 				CEB70BDC2D6EBF0A00616ECF /* Preview Content */,
 				CEB70BDD2D6EBF0A00616ECF /* Assets.xcassets */,
-				CEB70BE02D6EBF0A00616ECF /* SwiftUlToDoListApp.swift */,
+				CEB70BE02D6EBF0A00616ECF /* SwiftUIToDoListApp.swift */,
 				CEB70BFF2D6ED2C700616ECF /* Screens */,
 				CE168CA22D700CFC0046029B /* Components */,
 				CEFF5D142D714BCF0073113A /* SwiftData */,
 			);
-			path = SwiftUlToDoList;
+			path = SwiftUIToDoList;
 			sourceTree = "<group>";
 		};
 		CEB70BFF2D6ED2C700616ECF /* Screens */ = {
@@ -186,9 +186,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CE4ABC8B2D6EBB6B003C0682 /* SwiftUlToDoList */ = {
+		CE4ABC8B2D6EBB6B003C0682 /* SwiftUIToDoList */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE4ABC9C2D6EBB6B003C0682 /* Build configuration list for PBXNativeTarget "SwiftUlToDoList" */;
+			buildConfigurationList = CE4ABC9C2D6EBB6B003C0682 /* Build configuration list for PBXNativeTarget "SwiftUIToDoList" */;
 			buildPhases = (
 				CE4ABC882D6EBB6B003C0682 /* Sources */,
 				CE4ABC892D6EBB6B003C0682 /* Frameworks */,
@@ -198,12 +198,12 @@
 			);
 			dependencies = (
 			);
-			name = SwiftUlToDoList;
+			name = SwiftUIToDoList;
 			packageProductDependencies = (
 				CE168CAC2D703D090046029B /* SwiftUITabView */,
 			);
-			productName = SwiftUlToDoList;
-			productReference = CE4ABC8C2D6EBB6B003C0682 /* SwiftUlToDoList.app */;
+			productName = SwiftUIToDoList;
+			productReference = CE4ABC8C2D6EBB6B003C0682 /* SwiftUIToDoList.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -221,7 +221,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CE4ABC872D6EBB6B003C0682 /* Build configuration list for PBXProject "SwiftUlToDoList" */;
+			buildConfigurationList = CE4ABC872D6EBB6B003C0682 /* Build configuration list for PBXProject "SwiftUIToDoList" */;
 			developmentRegion = ja;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -238,7 +238,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE4ABC8B2D6EBB6B003C0682 /* SwiftUlToDoList */,
+				CE4ABC8B2D6EBB6B003C0682 /* SwiftUIToDoList */,
 			);
 		};
 /* End PBXProject section */
@@ -264,7 +264,7 @@
 				CEB70C052D6ED31200616ECF /* HomeView.swift in Sources */,
 				CEFF5D1C2D7151800073113A /* ToDoTask.swift in Sources */,
 				CEB70C152D6EED9000616ECF /* NavigationBarModifier.swift in Sources */,
-				CEB70BE62D6EBF0A00616ECF /* SwiftUlToDoListApp.swift in Sources */,
+				CEB70BE62D6EBF0A00616ECF /* SwiftUIToDoListApp.swift in Sources */,
 				CE168CA82D701D2F0046029B /* TextFieldAlertModifier.swift in Sources */,
 				CEB70C0D2D6ED3D500616ECF /* ScreenID.swift in Sources */,
 				CEB70C112D6ED4C500616ECF /* MainStack.swift in Sources */,
@@ -408,7 +408,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftUlToDoList/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIToDoList/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -422,7 +422,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.udemy.SwiftUlToDoList;
+				PRODUCT_BUNDLE_IDENTIFIER = com.udemy.SwiftUIToDoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
@@ -437,7 +437,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftUlToDoList/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIToDoList/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -451,7 +451,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.udemy.SwiftUlToDoList;
+				PRODUCT_BUNDLE_IDENTIFIER = com.udemy.SwiftUIToDoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 6.0;
@@ -462,7 +462,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE4ABC872D6EBB6B003C0682 /* Build configuration list for PBXProject "SwiftUlToDoList" */ = {
+		CE4ABC872D6EBB6B003C0682 /* Build configuration list for PBXProject "SwiftUIToDoList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE4ABC9A2D6EBB6B003C0682 /* Debug */,
@@ -471,7 +471,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE4ABC9C2D6EBB6B003C0682 /* Build configuration list for PBXNativeTarget "SwiftUlToDoList" */ = {
+		CE4ABC9C2D6EBB6B003C0682 /* Build configuration list for PBXNativeTarget "SwiftUIToDoList" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE4ABC9D2D6EBB6B003C0682 /* Debug */,

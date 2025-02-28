@@ -16,9 +16,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE4ABC8B2D6EBB6B003C0682"
-               BuildableName = "SwiftUlToDoList.app"
-               BlueprintName = "SwiftUlToDoList"
-               ReferencedContainer = "container:SwiftUlToDoList.xcodeproj">
+               BuildableName = "SwiftUIToDoList.app"
+               BlueprintName = "SwiftUIToDoList"
+               ReferencedContainer = "container:SwiftUIToDoList.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE4ABC8B2D6EBB6B003C0682"
-            BuildableName = "SwiftUlToDoList.app"
-            BlueprintName = "SwiftUlToDoList"
-            ReferencedContainer = "container:SwiftUlToDoList.xcodeproj">
+            BuildableName = "SwiftUIToDoList.app"
+            BlueprintName = "SwiftUIToDoList"
+            ReferencedContainer = "container:SwiftUIToDoList.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE4ABC8B2D6EBB6B003C0682"
-            BuildableName = "SwiftUlToDoList.app"
-            BlueprintName = "SwiftUlToDoList"
-            ReferencedContainer = "container:SwiftUlToDoList.xcodeproj">
+            BuildableName = "SwiftUIToDoList.app"
+            BlueprintName = "SwiftUIToDoList"
+            ReferencedContainer = "container:SwiftUIToDoList.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
