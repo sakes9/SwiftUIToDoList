@@ -79,6 +79,14 @@ struct HomeView: View {
                         defaultText: "タスク",
                         maxLength: 50,
                         onConfirm: editTask)
+
+        // ライフサイクル
+        .onAppear {
+            // 選択されているタブのインデックスがタブリストの範囲外の場合は初期値に設定
+            if selectedTabIndex >= toDoTabs.count {
+                selectedTabIndex = 0
+            }
+        }
     }
 
     /// タブ管理アイコンタップ時

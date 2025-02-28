@@ -59,7 +59,11 @@ struct TabManageView: View {
     /// 削除ボタンタップ時
     /// - Parameter toDoTab: タブ
     private func onDeleteButtonTapped(toDoTab: ToDoTab) {
-        print("タブ削除: \(toDoTab.name)")
+        do {
+            try todoTabService.delete(tabId: toDoTab.id)
+        } catch {
+            alertInfo = .init(title: "エラー", message: "タブの削除に失敗しました")
+        }
     }
 
     /// タブ追加
