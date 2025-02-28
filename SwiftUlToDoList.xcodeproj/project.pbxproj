@@ -23,6 +23,9 @@
 		CEB70C0F2D6ED41F00616ECF /* NavigationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70C0E2D6ED41B00616ECF /* NavigationItem.swift */; };
 		CEB70C112D6ED4C500616ECF /* MainStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70C102D6ED4C500616ECF /* MainStack.swift */; };
 		CEB70C152D6EED9000616ECF /* NavigationBarModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB70C142D6EED8600616ECF /* NavigationBarModifier.swift */; };
+		CEFF5D172D714C050073113A /* SwiftDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF5D162D714BFF0073113A /* SwiftDataService.swift */; };
+		CEFF5D1A2D7150040073113A /* ToDoTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF5D192D714FFE0073113A /* ToDoTab.swift */; };
+		CEFF5D1C2D7151800073113A /* ToDoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEFF5D1B2D71517C0073113A /* ToDoTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,9 @@
 		CEB70C0E2D6ED41B00616ECF /* NavigationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationItem.swift; sourceTree = "<group>"; };
 		CEB70C102D6ED4C500616ECF /* MainStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStack.swift; sourceTree = "<group>"; };
 		CEB70C142D6EED8600616ECF /* NavigationBarModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarModifier.swift; sourceTree = "<group>"; };
+		CEFF5D162D714BFF0073113A /* SwiftDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataService.swift; sourceTree = "<group>"; };
+		CEFF5D192D714FFE0073113A /* ToDoTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTab.swift; sourceTree = "<group>"; };
+		CEFF5D1B2D71517C0073113A /* ToDoTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +106,7 @@
 				CEB70BE02D6EBF0A00616ECF /* SwiftUlToDoListApp.swift */,
 				CEB70BFF2D6ED2C700616ECF /* Screens */,
 				CE168CA22D700CFC0046029B /* Components */,
+				CEFF5D142D714BCF0073113A /* SwiftData */,
 			);
 			path = SwiftUlToDoList;
 			sourceTree = "<group>";
@@ -148,6 +155,32 @@
 				CEB70C142D6EED8600616ECF /* NavigationBarModifier.swift */,
 			);
 			path = Layouts;
+			sourceTree = "<group>";
+		};
+		CEFF5D142D714BCF0073113A /* SwiftData */ = {
+			isa = PBXGroup;
+			children = (
+				CEFF5D182D714FF60073113A /* Models */,
+				CEFF5D152D714BF50073113A /* Services */,
+			);
+			path = SwiftData;
+			sourceTree = "<group>";
+		};
+		CEFF5D152D714BF50073113A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CEFF5D162D714BFF0073113A /* SwiftDataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CEFF5D182D714FF60073113A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CEFF5D192D714FFE0073113A /* ToDoTab.swift */,
+				CEFF5D1B2D71517C0073113A /* ToDoTask.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,16 +262,19 @@
 			files = (
 				CEB70C022D6ED2EB00616ECF /* InitialView.swift in Sources */,
 				CEB70C052D6ED31200616ECF /* HomeView.swift in Sources */,
+				CEFF5D1C2D7151800073113A /* ToDoTask.swift in Sources */,
 				CEB70C152D6EED9000616ECF /* NavigationBarModifier.swift in Sources */,
 				CEB70BE62D6EBF0A00616ECF /* SwiftUlToDoListApp.swift in Sources */,
 				CE168CA82D701D2F0046029B /* TextFieldAlertModifier.swift in Sources */,
 				CEB70C0D2D6ED3D500616ECF /* ScreenID.swift in Sources */,
 				CEB70C112D6ED4C500616ECF /* MainStack.swift in Sources */,
+				CEFF5D172D714C050073113A /* SwiftDataService.swift in Sources */,
 				CEB70C0F2D6ED41F00616ECF /* NavigationItem.swift in Sources */,
 				CE168CA62D70146C0046029B /* FloatingButton.swift in Sources */,
 				CEB70C072D6ED32C00616ECF /* TabManageView.swift in Sources */,
 				CE168CAF2D7043890046029B /* CustomAlert.swift in Sources */,
 				CE168CAA2D7031C90046029B /* CustomList.swift in Sources */,
+				CEFF5D1A2D7150040073113A /* ToDoTab.swift in Sources */,
 				CE168CA42D700D280046029B /* ToDoListItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
