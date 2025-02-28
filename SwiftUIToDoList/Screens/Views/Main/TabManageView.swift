@@ -8,6 +8,7 @@ struct TabManageView: View {
     @State private var isAddTabPresented = false // タブ追加アラート表示判定
     @State private var isEditTabPresented = false // タブ修正アラート表示判定
     @State private var alertInfo: AlertInfo? // アラート情報
+    @State private var selectedToDoTab: ToDoTab? // 選択されたタブ
 
     private let todoTabService = ToDoTabService() // ToDoタブサービス
 
@@ -18,6 +19,7 @@ struct TabManageView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 .contentShape(Rectangle()) // タップ領域を確保
                 .onTapGesture {
+                    selectedToDoTab = toDoTab
                     isEditTabPresented = true
                 }
         }
@@ -43,7 +45,7 @@ struct TabManageView: View {
                         title: "タブ修正",
                         message: "修正するタブ名を入力してください\n(20文字以内)",
                         placeholder: "例）勉強",
-                        defaultText: "タブ",
+                        defaultText: selectedToDoTab?.name ?? "",
                         maxLength: 20,
                         onConfirm: editTab)
         .customAlert(alertInfo: $alertInfo)
@@ -73,7 +75,15 @@ struct TabManageView: View {
     /// タブ修正
     /// - Parameter text: 入力テキスト
     private func editTab(text: String) {
-        print("タブ修正: \(text)")
+        guard let toDoTab = selectedToDoTab else {
+            return
+        }
+
+        do {
+            try todoTabService.edit(tabId: toDoTab.id, name: text)
+        } catch {
+            alertInfo = .init(title: "エラー", message: "タブの修正に失敗しました")
+        }
     }
 }
 
