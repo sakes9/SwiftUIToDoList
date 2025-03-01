@@ -80,4 +80,24 @@ extension ToDoTaskService {
         modelContext.delete(toDoTask)
         try modelContext.save() // 変更を即時に書き込む
     }
+
+    /// タスクの完了フラグを反転させる
+    /// - Parameter taskId: 完了フラグを反転させるタスクのID
+    func toggleCompletion(taskId: UUID) throws {
+        guard let modelContext else {
+            throw NSError(domain: "SwiftDataError", code: 0, userInfo: [NSLocalizedDescriptionKey: "ModelContextの初期化に失敗しました"])
+        }
+
+        // 更新対象のタスクを取得する
+        let fetchDescriptor = FetchDescriptor<ToDoTask>(predicate: #Predicate { $0.id == taskId })
+        guard let toDoTask = try modelContext.fetch(fetchDescriptor).first else {
+            throw NSError(domain: "SwiftDataError", code: 0, userInfo: [NSLocalizedDescriptionKey: "タスクの取得に失敗しました"])
+        }
+
+        // タスクの完了フラグを反転させる
+        toDoTask.isCompleted.toggle()
+        toDoTask.updatedAt = Date()
+
+        try modelContext.save() // 変更を即時に書き込む
+    }
 }

@@ -32,9 +32,7 @@ struct HomeView: View {
                         ToDoListItem(
                             text: task.name,
                             isSelected: task.isCompleted,
-                            action: {
-                                print("\(task.name) がタップされました")
-                            }
+                            action: { onCheckBoxTapped(task: task) }
                         )
                         .listRowInsets(EdgeInsets()) // 要素の余白を削除
                         .onTapGesture {
@@ -109,6 +107,16 @@ struct HomeView: View {
             try todoTaskService.delete(taskId: task.id)
         } catch {
             alertInfo = .init(title: "エラー", message: "タスクの削除に失敗しました")
+        }
+    }
+
+    /// チェックボックスタップ時
+    /// - Parameter task: タスク
+    private func onCheckBoxTapped(task: ToDoTask) {
+        do {
+            try todoTaskService.toggleCompletion(taskId: task.id)
+        } catch {
+            alertInfo = .init(title: "エラー", message: "タスクのチェックに失敗しました")
         }
     }
 
