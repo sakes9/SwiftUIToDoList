@@ -13,6 +13,7 @@ struct HomeView: View {
     @State private var isEditTaskPresented = false // タスク修正アラート表示判定
     @State private var selectedTabIndex = 0 // 選択されたタブのインデックス
     @State private var alertInfo: AlertInfo? // アラート情報
+    @State private var selectedTask: ToDoTask? // 選択されたタスク
 
     private let todoTaskService = ToDoTaskService() // ToDoタスクサービス
 
@@ -37,6 +38,7 @@ struct HomeView: View {
                         )
                         .listRowInsets(EdgeInsets()) // 要素の余白を削除
                         .onTapGesture {
+                            selectedTask = task
                             isEditTaskPresented = true
                         }
                     }
@@ -70,7 +72,7 @@ struct HomeView: View {
                         title: "ToDo修正",
                         message: "修正するタスク名を入力してください\n(50文字以内)",
                         placeholder: "例）アプリ開発",
-                        defaultText: "タスク",
+                        defaultText: selectedTask?.name ?? "",
                         maxLength: 50,
                         onConfirm: editTask)
         .customAlert(alertInfo: $alertInfo)
@@ -120,7 +122,12 @@ struct HomeView: View {
     /// タスク修正
     /// - Parameter text: 入力テキスト
     private func editTask(text: String) {
-        print("タスク修正: \(text)")
+        do {
+            guard let task = selectedTask else { return }
+            try todoTaskService.edit(taskId: task.id, name: text)
+        } catch {
+            alertInfo = .init(title: "エラー", message: "タスクの修正に失敗しました")
+        }
     }
 }
 

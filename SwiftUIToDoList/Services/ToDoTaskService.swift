@@ -40,4 +40,26 @@ extension ToDoTaskService {
         modelContext.insert(toDoTask)
         try modelContext.save() // 変更を即時に書き込む
     }
+
+    /// タスクを修正する
+    /// - Parameters:
+    ///   - taskId: 修正対象のタスクのID
+    ///   - name: タスク名
+    func edit(taskId: UUID, name: String) throws {
+        guard let modelContext else {
+            throw NSError(domain: "SwiftDataError", code: 0, userInfo: [NSLocalizedDescriptionKey: "ModelContextの初期化に失敗しました"])
+        }
+
+        // 修正対象のタスクを取得する
+        let fetchDescriptor = FetchDescriptor<ToDoTask>(predicate: #Predicate { $0.id == taskId })
+        guard let toDoTask = try modelContext.fetch(fetchDescriptor).first else {
+            throw NSError(domain: "SwiftDataError", code: 0, userInfo: [NSLocalizedDescriptionKey: "タスクの取得に失敗しました"])
+        }
+
+        // タスク情報を修正する
+        toDoTask.name = name
+        toDoTask.updatedAt = Date()
+
+        try modelContext.save() // 変更を即時に書き込む
+    }
 }
