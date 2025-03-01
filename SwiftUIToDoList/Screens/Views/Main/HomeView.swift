@@ -7,6 +7,7 @@ struct HomeView: View {
     @Binding var navigationPath: [NavigationItem]
 
     @Query(sort: \ToDoTab.createdAt) private var toDoTabs: [ToDoTab] // タブリスト
+    @Query(sort: \ToDoTask.createdAt) private var toDoTasks: [ToDoTask] // タスクリスト
 
     @State private var isAddTaskPresented = false // タスク追加アラート表示判定
     @State private var isEditTaskPresented = false // タスク修正アラート表示判定
@@ -15,28 +16,18 @@ struct HomeView: View {
 
     private let todoTaskService = ToDoTaskService() // ToDoタスクサービス
 
-    // ダミーのToDoタスク構造体
-    private struct DummyTodoTask: Identifiable {
-        var id: UUID // ID
-        var name: String // タスク名
-        var isCompleted: Bool = false // ToDoの完了状態
-    }
-
-    // ダミーのToDoタスクリスト
-    @State private var DUMMY_TODO_TASKS: [DummyTodoTask] = [
-        .init(id: UUID(), name: "タスク1", isCompleted: true),
-        .init(id: UUID(), name: "タスク2", isCompleted: false),
-        .init(id: UUID(), name: "タスク3", isCompleted: false)
-    ]
-
     var body: some View {
         VStack(spacing: 0) {
             TabBarView(selectedIndex: $selectedTabIndex,
                        titles: toDoTabs.map { $0.name },
                        selectedColor: Color("ThemeColor"))
             TabView(selection: $selectedTabIndex) {
-                ForEach(toDoTabs.indices, id: \.self) { _ in
-                    CustomList(items: DUMMY_TODO_TASKS, onDelete: onDeleteButtonTapped) { task in
+                ForEach(toDoTabs.indices, id: \.self) { index in
+                    // タブに紐づくタスクを抽出する
+                    let tabId = toDoTabs[index].id
+                    let filteredTasks = toDoTasks.filter { $0.todoTab?.id == tabId }
+
+                    CustomList(items: filteredTasks, onDelete: onDeleteButtonTapped) { task in
                         ToDoListItem(
                             text: task.name,
                             isSelected: task.isCompleted,
@@ -111,8 +102,8 @@ struct HomeView: View {
 
     /// 削除ボタンタップ時
     /// - Parameter task: タスク
-    private func onDeleteButtonTapped(task: DummyTodoTask) {
-        DUMMY_TODO_TASKS.removeAll { $0.id == task.id }
+    private func onDeleteButtonTapped(task: ToDoTask) {
+        print("タスク削除: \(task.name)")
     }
 
     /// タスク追加
