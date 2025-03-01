@@ -15,6 +15,19 @@ class ToDoTaskService {
 
 /// 外部公開メソッド
 extension ToDoTaskService {
+    /// 全てのタスクを取得する
+    /// - Returns: 全てのタスク
+    func getAll() throws -> [ToDoTask] {
+        guard let modelContext else {
+            throw NSError(domain: "SwiftDataError", code: 0, userInfo: [NSLocalizedDescriptionKey: "ModelContextの初期化に失敗しました"])
+        }
+
+        let fetchDescriptor = FetchDescriptor<ToDoTask>()
+        let toDoTasks = try modelContext.fetch(fetchDescriptor)
+
+        return toDoTasks
+    }
+
     /// タスクを追加する
     /// - Parameters:
     ///   - name: タスク名

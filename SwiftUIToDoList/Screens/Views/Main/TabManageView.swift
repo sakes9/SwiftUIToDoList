@@ -70,7 +70,7 @@ struct TabManageView: View {
     /// - Parameter text: 入力テキスト
     private func addTab(text: String) {
         do {
-            try todoTabService.add(name: text)
+            _ = try todoTabService.add(name: text)
         } catch {
             alertInfo = .init(title: "エラー", message: "タブの追加に失敗しました")
         }

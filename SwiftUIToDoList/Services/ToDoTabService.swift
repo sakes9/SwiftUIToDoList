@@ -15,9 +15,23 @@ class ToDoTabService {
 
 /// 外部公開メソッド
 extension ToDoTabService {
+    /// 全てのタブを取得する
+    /// - Returns: 全てのタブ
+    func getAll() throws -> [ToDoTab] {
+        guard let modelContext else {
+            throw NSError(domain: "SwiftDataError", code: 0, userInfo: [NSLocalizedDescriptionKey: "ModelContextの初期化に失敗しました"])
+        }
+
+        let fetchDescriptor = FetchDescriptor<ToDoTab>()
+        let toDoTabs = try modelContext.fetch(fetchDescriptor)
+
+        return toDoTabs
+    }
+
     /// タブを追加する
     /// - Parameter name: タブ名
-    func add(name: String) throws {
+    /// - Returns: 追加したタブのID
+    func add(name: String) throws -> UUID {
         guard let modelContext else {
             throw NSError(domain: "SwiftDataError", code: 0, userInfo: [NSLocalizedDescriptionKey: "ModelContextの初期化に失敗しました"])
         }
@@ -29,6 +43,8 @@ extension ToDoTabService {
 
         modelContext.insert(toDoTab)
         try modelContext.save() // 変更を即時に書き込む
+
+        return toDoTab.id
     }
 
     /// タブを修正する
