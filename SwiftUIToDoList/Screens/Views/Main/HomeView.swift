@@ -11,6 +11,9 @@ struct HomeView: View {
     @State private var isAddTaskPresented = false // タスク追加アラート表示判定
     @State private var isEditTaskPresented = false // タスク修正アラート表示判定
     @State private var selectedTabIndex = 0 // 選択されたタブのインデックス
+    @State private var alertInfo: AlertInfo? // アラート情報
+
+    private let todoTaskService = ToDoTaskService() // ToDoタスクサービス
 
     // ダミーのToDoタスク構造体
     private struct DummyTodoTask: Identifiable {
@@ -79,6 +82,7 @@ struct HomeView: View {
                         defaultText: "タスク",
                         maxLength: 50,
                         onConfirm: editTask)
+        .customAlert(alertInfo: $alertInfo)
 
         // ライフサイクル
         .onAppear {
@@ -96,6 +100,12 @@ struct HomeView: View {
 
     /// タスク追加ボタンタップ時
     private func onTaskAddButtonTapped() {
+        // タブが存在しない場合はアラートを表示して処理を中断
+        if toDoTabs.isEmpty {
+            alertInfo = .init(title: "確認", message: "はじめにタブを作成してください")
+            return
+        }
+
         isAddTaskPresented = true
     }
 
@@ -108,7 +118,12 @@ struct HomeView: View {
     /// タスク追加
     /// - Parameter text: 入力テキスト
     private func addTask(text: String) {
-        print("タスク追加: \(text)")
+        do {
+            let selectedTab = toDoTabs[selectedTabIndex]
+            try todoTaskService.add(name: text, tabId: selectedTab.id)
+        } catch {
+            alertInfo = .init(title: "エラー", message: "タスクの追加に失敗しました")
+        }
     }
 
     /// タスク修正
