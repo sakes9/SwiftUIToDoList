@@ -62,4 +62,22 @@ extension ToDoTaskService {
 
         try modelContext.save() // 変更を即時に書き込む
     }
+
+    /// タスクを削除する
+    /// - Parameter taskId: 削除対象のタスクのID
+    func delete(taskId: UUID) throws {
+        guard let modelContext else {
+            throw NSError(domain: "SwiftDataError", code: 0, userInfo: [NSLocalizedDescriptionKey: "ModelContextの初期化に失敗しました"])
+        }
+
+        // 削除対象のタスクを取得する
+        let fetchDescriptor = FetchDescriptor<ToDoTask>(predicate: #Predicate { $0.id == taskId })
+        guard let toDoTask = try modelContext.fetch(fetchDescriptor).first else {
+            throw NSError(domain: "SwiftDataError", code: 0, userInfo: [NSLocalizedDescriptionKey: "タスクの取得に失敗しました"])
+        }
+
+        // タスクを削除
+        modelContext.delete(toDoTask)
+        try modelContext.save() // 変更を即時に書き込む
+    }
 }

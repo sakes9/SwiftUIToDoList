@@ -105,7 +105,11 @@ struct HomeView: View {
     /// 削除ボタンタップ時
     /// - Parameter task: タスク
     private func onDeleteButtonTapped(task: ToDoTask) {
-        print("タスク削除: \(task.name)")
+        do {
+            try todoTaskService.delete(taskId: task.id)
+        } catch {
+            alertInfo = .init(title: "エラー", message: "タスクの削除に失敗しました")
+        }
     }
 
     /// タスク追加
